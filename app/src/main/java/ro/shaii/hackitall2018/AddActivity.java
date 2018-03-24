@@ -170,7 +170,7 @@ public class AddActivity extends AppCompatActivity {
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("foods");
 
-        databaseReference.child(mAuth.getCurrentUser().getUid()).child(String.valueOf(System.currentTimeMillis())).setValue(newFood);
+        databaseReference.child(mAuth.getCurrentUser().getUid()).child(newFood.getFoodName()).setValue(newFood);
 
         finish();
 

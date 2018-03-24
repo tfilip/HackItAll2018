@@ -2,12 +2,17 @@ package ro.shaii.hackitall2018;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -34,7 +39,7 @@ public class FoodCardAdapter extends RecyclerView.Adapter<FoodCardAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         Food food = foodList.get(position);
         if(food!=null){
             Picasso.get().load(food.getPhotoURL()).into(holder.IMG);
@@ -43,6 +48,21 @@ public class FoodCardAdapter extends RecyclerView.Adapter<FoodCardAdapter.ViewHo
             holder.dataExpirareTV.setText(food.getExpiryDate());
             holder.dataProductieTV.setText(food.getProductionDate());
         }
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("foods").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .child(foodList.get(position).getFoodName());
+
+                Log.d("TEST",databaseReference.toString());
+
+                databaseReference.removeValue();
+
+                return true;
+            }
+        });
+
     }
 
     @Override

@@ -22,10 +22,6 @@
         <activity android:name=".RestaurantMain2Activity" />
         <activity android:name=".Offer" />
         <activity android:name=".AddActivity" />
-        <activity
-            android:name=".TabsActivity"
-            android:label="@string/title_activity_tabs"
-            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
