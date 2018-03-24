@@ -35,7 +35,7 @@
 
             <TextView
                 android:id="@+id/numeMancare"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_toEndOf="@id/mancareDefault"
@@ -50,7 +50,7 @@
 
             <TextView
                 android:id="@+id/numeRestaurant"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/numeMancare"
                 android:layout_marginStart="5dp"
@@ -65,7 +65,7 @@
 
             <TextView
                 android:id="@+id/dataProducere"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/numeRestaurant"
                 android:layout_marginStart="5dp"
@@ -81,7 +81,7 @@
 
             <TextView
                 android:id="@+id/dataExpirare"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dataProducere"
                 android:layout_marginStart="5dp"
