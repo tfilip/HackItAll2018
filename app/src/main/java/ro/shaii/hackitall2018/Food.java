@@ -1,7 +1,5 @@
 package ro.shaii.hackitall2018;
 
-import java.util.Date;
-
 /**
  * Created by filip on 24-Mar-18.
  */
@@ -11,7 +9,7 @@ public class Food {
     public String foodName;
     public String rest;
     public String productionDate;
-    public String expirtyDate;
+    public String expiryDate;
     public String descriere;
     public String photoURL;
 
@@ -28,11 +26,11 @@ public class Food {
         this.photoURL = photoURL;
     }
 
-    public Food(String foodName, String rest, String productionDate, String expirtyDate, String descriere, String photoURL) {
+    public Food(String foodName, String rest, String productionDate, String expiryDate, String descriere, String photoURL) {
         this.foodName = foodName;
         this.rest = rest;
         this.productionDate = productionDate;
-        this.expirtyDate = expirtyDate;
+        this.expiryDate = expiryDate;
         this.descriere = descriere;
         this.photoURL = photoURL;
     }
@@ -79,11 +77,11 @@ public class Food {
         this.productionDate = productionDate;
     }
 
-    public String getExpirtyDate() {
-        return expirtyDate;
+    public String getExpiryDate() {
+        return expiryDate;
     }
 
-    public void setExpirtyDate(String expirtyDate) {
-        this.expirtyDate = expirtyDate;
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
     }
 }

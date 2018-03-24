@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 /**
@@ -42,7 +40,7 @@ public class FoodCardAdapter extends RecyclerView.Adapter<FoodCardAdapter.ViewHo
             Picasso.get().load(food.getPhotoURL()).into(holder.IMG);
             holder.numeMancareTV.setText(food.getFoodName());
             holder.numeRestaurantTV.setText(food.getRest());
-            holder.dataExpirareTV.setText(food.getExpirtyDate());
+            holder.dataExpirareTV.setText(food.getExpiryDate());
             holder.dataProductieTV.setText(food.getProductionDate());
         }
     }
