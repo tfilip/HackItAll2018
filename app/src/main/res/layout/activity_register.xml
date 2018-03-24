@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_centerInParent="true"
-    android:scaleType="centerCrop"
-    android:src="@drawable/food-1-2"
+
     tools:context="ro.shaii.hackitall2018.MainActivity"
     android:orientation="vertical">
 
