@@ -28,7 +28,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/loginET"
         android:inputType="textEmailAddress"
-        android:hint="Nume de utilizator"
+        android:hint="Email"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:backgroundTint="#FFD54F"/>
 
 
@@ -38,6 +40,8 @@
         android:inputType="textPassword"
         android:id="@+id/passwordET"
         android:backgroundTint="#FFD54F"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:hint="Parola"/>
 
     </LinearLayout>
