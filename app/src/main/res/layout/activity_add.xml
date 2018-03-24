@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ro.shaii.hackitall2018.ClientMainActivity"
+    tools:context="ro.shaii.hackitall2018.AddActivity"
     android:gravity="center_horizontal">
 
 
@@ -50,6 +50,7 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/preparat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Preparat"

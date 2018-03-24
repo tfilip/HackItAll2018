@@ -78,14 +78,14 @@
 
 
     <Button
+        android:layout_below="@id/cdescriere"
         android:id="@+id/clientbuton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
         android:text="Accept"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="70dp"
-        android:backgroundTint="#FF8F00"
+        android:backgroundTint="#0F8F00"
         android:textColor="#FFE082"
         />
 

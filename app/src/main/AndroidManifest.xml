@@ -19,7 +19,9 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RestaurantMainActivity" />
         <activity android:name=".ClientMainActivity" />
-        <activity android:name=".RestaurantMain2Activity"></activity>
+        <activity android:name=".RestaurantMain2Activity" />
+        <activity android:name=".Offer" />
+        <activity android:name=".AddActivity"></activity>
     </application>
 
 </manifest>
