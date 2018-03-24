@@ -22,7 +22,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/loginET"
         android:inputType="textEmailAddress"
-        android:hint="Nume de utilizator" />
+        android:hint="Nume de utilizator"
+        android:backgroundTint="#FFD54F"/>
 
 
     <EditText
@@ -30,6 +31,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:id="@+id/passwordET"
+        android:backgroundTint="#FFD54F"
         android:hint="Parola"/>
 
     </LinearLayout>
@@ -61,7 +63,7 @@
         android:id="@+id/registerBTN"
         android:text="Inregistrare"
         android:layout_marginEnd="10dp"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="5dp"
         android:textColor="#FFE082"
         android:backgroundTint="#FF8F00"/>
     </LinearLayout>
