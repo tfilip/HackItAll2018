@@ -8,15 +8,13 @@ import java.util.ArrayList;
 
 public class restaurant extends User{
 
-    private String nume_restaurant;
     private int rating;
     private ArrayList<Review> reviews;
-    private int telefon;
+    private String telefon;
 
-    public restaurant(String nume_restaurant, String address, int telefon) {
+    public restaurant(String address, String telefon) {
         super.type = "Restaurant";
         super.address = address;
-        this.nume_restaurant = nume_restaurant;
         this.rating = 0;
         this.telefon = telefon;
     }
