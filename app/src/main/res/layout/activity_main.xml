@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="ro.shaii.hackitall2018.MainActivity"
-    android:orientation="vertical">
+    >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/texte"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/loginET"
         android:inputType="textEmailAddress"
-        android:hint="Nume de utilizator"/>
+        android:hint="Nume de utilizator" />
 
 
     <EditText
@@ -21,21 +29,36 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:id="@+id/passwordET"
+        android:layout_below="@id/loginET"
         android:hint="Parola"/>
 
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/butoane"
+        android:layout_below="@id/texte"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:padding="10dp"
+        android:layout_marginTop="60dp">
 
     <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Autentificare"
-        android:id="@+id/loginBTN"/>
+        android:id="@+id/loginBTN"
+        android:layout_margin="10dp"/>
 
     <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/registerBTN"
-        android:text="Inregistrare"/>
+        android:text="Inregistrare"
+        android:layout_margin="10dp"/>
+    </LinearLayout>
 
-
-</LinearLayout>
+</RelativeLayout>
