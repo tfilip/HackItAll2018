@@ -1,9 +1,16 @@
 package ro.shaii.hackitall2018;
 
+import android.*;
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.LoginFilter;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
+
+import java.net.URL;
 
 public class Offer extends AppCompatActivity {
 
@@ -49,8 +58,8 @@ public class Offer extends AppCompatActivity {
         foodUID = getIntent().getStringExtra("201");
         restaurantUID = getIntent().getStringExtra("200");
 
-        Log.d("TEST LOL",foodUID);
-        Log.d("TEST",restaurantUID);
+        Log.d("TEST LOL", foodUID);
+        Log.d("TEST", restaurantUID);
 
 
         final DatabaseReference foodRef = FirebaseDatabase.getInstance().getReference().child("foods").child(restaurantUID);
@@ -58,34 +67,34 @@ public class Offer extends AppCompatActivity {
         foodRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-               for(DataSnapshot foodSnapshot: dataSnapshot.getChildren()){
+                for (DataSnapshot foodSnapshot : dataSnapshot.getChildren()) {
 
-                   Log.d("ITERATE",foodSnapshot.child("foodName").getValue().toString());
+                    Log.d("ITERATE", foodSnapshot.child("foodName").getValue().toString());
 
-                   if(foodSnapshot.child("foodName").getValue().toString().equals(foodUID)){
-                       String foodName = foodSnapshot.child("foodName").getValue().toString();
-                       String descriere = foodSnapshot.child("descriere").getValue().toString();
-                       String numeRestaurant = foodSnapshot.child("restaurant").getValue().toString();
-                       String productionDate = foodSnapshot.child("productionDate").getValue().toString();
-                       String expiryDate = foodSnapshot.child("expiryDate").getValue().toString();
-                       String photoUrl = foodSnapshot.child("photoURL").getValue().toString();
-                       String foodUID = foodSnapshot.child("restUID").getValue().toString();
-                       Log.d("TYY",photoUrl);
+                    if (foodSnapshot.child("foodName").getValue().toString().equals(foodUID)) {
+                        String foodName = foodSnapshot.child("foodName").getValue().toString();
+                        String descriere = foodSnapshot.child("descriere").getValue().toString();
+                        String numeRestaurant = foodSnapshot.child("restaurant").getValue().toString();
+                        String productionDate = foodSnapshot.child("productionDate").getValue().toString();
+                        String expiryDate = foodSnapshot.child("expiryDate").getValue().toString();
+                        String photoUrl = foodSnapshot.child("photoURL").getValue().toString();
+                        String foodUID = foodSnapshot.child("restUID").getValue().toString();
+                        Log.d("TYY", photoUrl);
 
 
-                       food = new Food(foodName,numeRestaurant,productionDate,expiryDate,descriere,photoUrl,foodUID);
-                   }
+                        food = new Food(foodName, numeRestaurant, productionDate, expiryDate, descriere, photoUrl, foodUID);
+                    }
 
-                   if(food!=null) {
-                       Picasso.get().load(food.getPhotoURL()).into(img);
-                       titleTV.setText(food.getFoodName());
-                       descriereTV.setText(food.getDescriere());
-                       restaurantTV.setText(food.getRestaurant());
-                       produsTV.setText(food.getProductionDate());
-                       expireTV.setText(food.getExpiryDate());
-                   }
+                    if (food != null) {
+                        Picasso.get().load(food.getPhotoURL()).into(img);
+                        titleTV.setText(food.getFoodName());
+                        descriereTV.setText(food.getDescriere());
+                        restaurantTV.setText(food.getRestaurant());
+                        produsTV.setText(food.getProductionDate());
+                        expireTV.setText(food.getExpiryDate());
+                    }
 
-               }
+                }
             }
 
             @Override
@@ -96,26 +105,25 @@ public class Offer extends AppCompatActivity {
 
         final DatabaseReference restRef = FirebaseDatabase.getInstance().getReference().child("restaurants");
 
-       restRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        restRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot restSnapshot: dataSnapshot.getChildren()){
+                for (DataSnapshot restSnapshot : dataSnapshot.getChildren()) {
 
-                   if(restSnapshot.getKey().toString().equals(restaurantUID)){
+                    if (restSnapshot.getKey().toString().equals(restaurantUID)) {
 
-                       String address = restSnapshot.child("address").getValue().toString();
-                       String telefon = restSnapshot.child("telefon").getValue().toString();
-                       String nume = restSnapshot.child("nume").getValue().toString();
+                        String address = restSnapshot.child("address").getValue().toString();
+                        String telefon = restSnapshot.child("telefon").getValue().toString();
+                        String nume = restSnapshot.child("nume").getValue().toString();
 
 
+                        restaurant = new restaurant(address, telefon, nume);
 
-                       restaurant = new restaurant(address,telefon,nume);
-
-                   }
+                    }
 
                 }
 
-                if(restaurant!=null){
+                if (restaurant != null) {
                     telefonTV.setText(restaurant.getTelefon());
                     addressTV.setText(restaurant.getAddress());
                 }
@@ -126,7 +134,6 @@ public class Offer extends AppCompatActivity {
 
             }
         });
-
 
 
     }
@@ -142,6 +149,32 @@ public class Offer extends AppCompatActivity {
         descriereTV = findViewById(R.id.cdescriere);
         acceptBTN = findViewById(R.id.clientbuton);
         img = findViewById(R.id.clientpic);
+
+
+        acceptBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (food != null) {
+                    String uri = "tel:" + restaurant.getTelefon().trim();
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse(uri));
+                    if (ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+
+                        ActivityCompat.requestPermissions(Offer.this, new String[]{Manifest.permission.CALL_PHONE},300);
+
+                        return;
+                    }
+                    getApplicationContext().startActivity(intent);
+                }
+            }
+        });
 
     }
 
