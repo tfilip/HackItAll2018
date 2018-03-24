@@ -21,6 +21,8 @@
         android:id="@+id/cmname"
         android:text="Pizza cu Pepperoni"
         android:layout_centerHorizontal="true"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:textSize="30sp"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
@@ -103,23 +105,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/cdescriere"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:background="#0F8F00"
         android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
 
     <Button
         android:id="@+id/clientbuton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:
         android:textSize="25sp"
         android:text="Accept"
-        android:layout_weight="2"
         android:backgroundTint="#0F8F00"
         android:textColor="#FFE082"
         />
