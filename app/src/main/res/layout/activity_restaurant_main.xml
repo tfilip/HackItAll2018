@@ -8,14 +8,13 @@
     tools:context="ro.shaii.hackitall2018.restaurant"
     android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="27dp"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <EditText
@@ -29,14 +28,22 @@
         android:inputType="textNoSuggestions"
         android:paddingTop="20dp" />
 
+    <TextView
+        android:id="@+id/textFotoET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
+        android:layout_below="@+id/img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Introduceti fotografie" />
     <EditText
+
         android:id="@+id/adresaET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/telefonET"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp"
         android:backgroundTint="#FFD54F"
         android:hint="Adresa Restaurant"
         android:inputType="textNoSuggestions"
@@ -46,16 +53,16 @@
         android:id="@+id/telefonET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/loginBTN"
+        android:layout_above="@+id/saveBTN"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="118dp"
+        android:layout_marginBottom="110dp"
         android:backgroundTint="#FFD54F"
         android:hint="Telefon"
         android:inputType="textNoSuggestions"
         android:paddingTop="20dp" />
 
     <Button
-        android:id="@+id/loginBTN"
+        android:id="@+id/saveBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -64,7 +71,6 @@
         android:backgroundTint="#FF8F00"
         android:textColor="#FFE082"
         android:text="salvare" />
-
 
 
 
