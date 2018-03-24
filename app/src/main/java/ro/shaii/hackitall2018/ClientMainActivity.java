@@ -82,10 +82,10 @@ public class ClientMainActivity extends AppCompatActivity {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 foodList.clear();
 
                 for(DataSnapshot dsp: dataSnapshot.getChildren()){
-                    Log.d("TEST",dsp.getKey());
 
                     databaseFood = FirebaseDatabase.getInstance().getReference().child("foods").child(dsp.getKey());
 
@@ -101,13 +101,17 @@ public class ClientMainActivity extends AppCompatActivity {
                                 String productionDate = foodSnapshot.child("productionDate").getValue().toString();
                                 String expiryDate = foodSnapshot.child("expiryDate").getValue().toString();
                                 String photoUrl = foodSnapshot.child("photoURL").getValue().toString();
-                                Food newFood = new Food(foodName,numeRestaurant,productionDate,expiryDate,descriere,photoUrl);
+                                String foodUID = foodSnapshot.child("restUID").getValue().toString();
+                                Food newFood = new Food(foodName,numeRestaurant,productionDate,expiryDate,descriere,photoUrl,foodUID);
                                 foodList.add(newFood);
 
                             }
 
-                            adapter = new FoodCardAdapter(foodList,ClientMainActivity.this);
+                            adapter = new FoodCardAdapterClient(foodList,ClientMainActivity.this);
                             recyclerView.setAdapter(adapter);
+
+
+
 
                         }
 
@@ -119,6 +123,8 @@ public class ClientMainActivity extends AppCompatActivity {
 
 
                 }
+
+
             }
 
             @Override

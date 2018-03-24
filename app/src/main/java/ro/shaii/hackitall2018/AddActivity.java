@@ -166,7 +166,7 @@ public class AddActivity extends AppCompatActivity {
         }
 
 
-        Food newFood = new Food(numeMancare,FirebaseAuth.getInstance().getCurrentUser().getDisplayName(),dataProductie,dataExpirare,descriere,photoURL);
+        Food newFood = new Food(numeMancare,FirebaseAuth.getInstance().getCurrentUser().getDisplayName(),dataProductie,dataExpirare,descriere,photoURL,FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("foods");
 

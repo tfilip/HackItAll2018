@@ -102,7 +102,8 @@ public class RestaurantMain2Activity extends AppCompatActivity {
                     String productionDate = foodSnapshot.child("productionDate").getValue().toString();
                     String expiryDate = foodSnapshot.child("expiryDate").getValue().toString();
                     String photoUrl = foodSnapshot.child("photoURL").getValue().toString();
-                    Food newFood = new Food(foodName,numeRestaurant,productionDate,expiryDate,descriere,photoUrl);
+                    String foodUID = foodSnapshot.child("restUID").getValue().toString();
+                    Food newFood = new Food(foodName,numeRestaurant,productionDate,expiryDate,descriere,photoUrl,foodUID);
                     foodList.add(newFood);
 
                 }

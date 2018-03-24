@@ -12,7 +12,7 @@ public class Food {
     public String expiryDate;
     public String descriere;
     public String photoURL;
-
+    public String restUID;
 
     public Food(){
 
@@ -26,13 +26,14 @@ public class Food {
         this.photoURL = photoURL;
     }
 
-    public Food(String foodName, String rest, String productionDate, String expiryDate, String descriere, String photoURL) {
+    public Food(String foodName, String rest, String productionDate, String expiryDate, String descriere, String photoURL, String restUID) {
         this.foodName = foodName;
         this.rest = rest;
         this.productionDate = productionDate;
         this.expiryDate = expiryDate;
         this.descriere = descriere;
         this.photoURL = photoURL;
+        this.restUID = restUID;
     }
 
 
@@ -83,5 +84,9 @@ public class Food {
 
     public void setExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
+    }
+
+    public String getRestUID() {
+        return restUID;
     }
 }
