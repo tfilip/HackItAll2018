@@ -19,7 +19,7 @@
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Adauga un anunt" />
+        android:text="" />
 
     <ImageView
         android:id="@+id/imgAnunt"

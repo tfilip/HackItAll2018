@@ -10,16 +10,24 @@
         android:src="@drawable/o"
         android:id="@+id/clientpic"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/clientpic"
+        android:id="@+id/headerAnunt"
+        android:background="#0F8F00">
     <TextView
         android:id="@+id/cmname"
         android:text="Pizza cu Pepperoni"
-        android:layout_centerHorizontal="false"
-        android:layout_below="@+id/clientpic"
-        android:textSize="28sp"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
+        android:textStyle="bold"
+        android:textColor="#FFE082"
         />
     <TextView
         android:id="@+id/crest"
@@ -31,7 +39,33 @@
         android:textSize="22sp"
         android:layout_marginTop="10dp"
         android:paddingLeft="10dp"
+        android:textStyle="italic"
+        android:textColor="#FFE082"
         />
+
+        <TextView
+            android:id="@+id/ctelefon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="0724568729"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textColor="#FFE082"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Splaiul Independentei 290"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/cadresa"
+            android:textColor="#FFE082"
+            />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/cprodus"
@@ -39,7 +73,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:text="Produs la data de 22.03.2017"
-        android:layout_below="@id/crest"
+        android:layout_below="@id/headerAnunt"
         android:layout_marginTop="10dp"
         android:paddingLeft="10dp"
         />
@@ -56,37 +90,34 @@
         />
 
     <TextView
-        android:id="@+id/ctelefon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="0724568729"
-        android:layout_below="@id/cexpira"
-        android:layout_marginTop="5dp"
-        android:paddingLeft="10dp"
-        />
-
-    <TextView
         android:id="@+id/cdescriere"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="17sp"
-        android:layout_below="@id/ctelefon"
+        android:layout_below="@id/cexpira"
         android:layout_marginTop="25dp"
-        android:text="Pizza pe jumatate mancata cu Peperoni si Cheddar"
-        android:paddingLeft="10dp"/>
+        android:text="Pizza pe jumatate mancata cu Peperoni si Cheddar. "
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"/>
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cdescriere"
+        android:background="#0F8F00" >
     <Button
         android:layout_below="@id/cdescriere"
         android:id="@+id/clientbuton"
         android:layout_width="match_parent"
-        android:layout_height="15dp"
+        android:layout_height="match_parent"
+        android:textSize="30sp"
         android:text="Accept"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:backgroundTint="#0F8F00"
         android:textColor="#FFE082"
         />
+    </LinearLayout>
 
 </RelativeLayout>
