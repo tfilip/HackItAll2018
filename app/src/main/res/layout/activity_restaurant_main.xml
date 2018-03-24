@@ -1,72 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ro.shaii.hackitall2018.RestaurantMainActivity">
+    tools:context="ro.shaii.hackitall2018.restaurant"
+    android:orientation="vertical">
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/loginBTN"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="43dp"
+        android:layout_above="@+id/numeresET"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <EditText
         android:id="@+id/numeresET"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_above="@id/adresaET"
-        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adresaET"
+        android:layout_centerHorizontal="true"
         android:backgroundTint="#FFD54F"
         android:hint="Nume Restaurant"
         android:inputType="textNoSuggestions"
-        android:paddingTop="20dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="181dp" />
+        android:paddingTop="20dp" />
+
 
     <EditText
         android:id="@+id/adresaET"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_above="@id/telefonET"
-        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/telefonET"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="#FFD54F"
         android:hint="Adresa Restaurant"
         android:inputType="textNoSuggestions"
-        android:paddingTop="20dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="229dp" />
-
+        android:paddingTop="20dp" />
 
     <EditText
         android:id="@+id/telefonET"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_above="@id/adresaET"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/loginBTN"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="118dp"
         android:backgroundTint="#FFD54F"
         android:hint="Telefon"
         android:inputType="textNoSuggestions"
-        android:paddingTop="20dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="277dp" />
+        android:paddingTop="20dp" />
 
     <Button
-        android:id="@+id/saveBTN"
+        android:id="@+id/loginBTN"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:layout_weight="10"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="65dp"
         android:backgroundTint="#FF8F00"
-        android:text="Salvare"
         android:textColor="#FFE082"
-        android:textSize="15sp"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="480dp" />
-
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="98dp"
-        android:layout_height="85dp"
-        app:srcCompat="@android:drawable/ic_menu_camera"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="29dp" />
+        android:text="salvare" />
 
 
-</android.support.constraint.ConstraintLayout>
+
+
+</RelativeLayout>
