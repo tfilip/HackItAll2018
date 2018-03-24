@@ -6,8 +6,14 @@
     android:layout_height="match_parent"
     tools:context="ro.shaii.hackitall2018.MainActivity"
     >
-    
 
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_above="@+id/texte"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:src="@drawable/plate" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
