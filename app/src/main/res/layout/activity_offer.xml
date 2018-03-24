@@ -3,12 +3,90 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/o"
+        android:id="@+id/clientpic"/>
+
+    <TextView
+        android:id="@+id/cmname"
+        android:text="Pizza cu Pepperoni"
+        android:layout_centerHorizontal="false"
+        android:layout_below="@+id/clientpic"
+        android:textSize="28sp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        />
+    <TextView
+        android:id="@+id/crest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pub18"
+        android:layout_centerHorizontal="false"
+        android:layout_below="@+id/cmname"
+        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/cprodus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Produs la data de 22.03.2017"
+        android:layout_below="@id/crest"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/cexpira"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Expira la data de 24.03.2017"
+        android:layout_below="@id/cprodus"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/ctelefon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="0724568729"
+        android:layout_below="@id/cexpira"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/cdescriere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_below="@id/ctelefon"
+        android:layout_marginTop="15dp"
+        android:text="Pizza pe jumatate mancata cu Peperoni si Cheddar"
+        android:paddingLeft="10dp"/>
+
 
     <Button
+        android:id="@+id/clientbuton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Accept"
-        android:layout_marginBottom="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="#FF8F00"
+        android:textColor="#FFE082"
         />
 
 </RelativeLayout>
