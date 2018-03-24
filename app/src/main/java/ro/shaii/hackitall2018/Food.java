@@ -13,12 +13,31 @@ public class Food {
     public Date productionDate;
     public Date expirtyDate;
     public String descriere;
+    public String photoURL;
+
 
     public Food(){
 
     }
 
-    public Food(String foodName, restaurant restaurant, Date productionDate, Date expirtyDate,String descriere) {
+    public String getPhotoURL() {
+        return photoURL;
+    }
+
+    public void setPhotoURL(String photoURL) {
+        this.photoURL = photoURL;
+    }
+
+    public Food(String foodName, restaurant rest, Date productionDate, Date expirtyDate, String descriere, String photoURL) {
+        this.foodName = foodName;
+        this.rest = rest;
+        this.productionDate = productionDate;
+        this.expirtyDate = expirtyDate;
+        this.descriere = descriere;
+        this.photoURL = photoURL;
+    }
+
+    public Food(String foodName, restaurant restaurant, Date productionDate, Date expirtyDate, String descriere) {
         this.foodName = foodName;
         this.rest = restaurant;
         this.productionDate = productionDate;

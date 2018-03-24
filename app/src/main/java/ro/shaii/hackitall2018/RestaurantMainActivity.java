@@ -146,7 +146,7 @@ public class RestaurantMainActivity extends AppCompatActivity {
 
         DatabaseReference ref = mDatabase.getReference("restaurants");
 
-        restaurant newRestaurant = new restaurant(address,numar);
+        restaurant newRestaurant = new restaurant(address,numar,nume);
 
         if (user != null) {
             ref.child(user.getUid()).setValue(newRestaurant);
@@ -182,6 +182,7 @@ public class RestaurantMainActivity extends AppCompatActivity {
             numeET.requestFocus();
             return false;
         }
+
 
         return true;
 
