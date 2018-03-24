@@ -30,38 +30,38 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:id="@+id/passwordET"
-        android:layout_below="@id/loginET"
         android:hint="Parola"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/butoane"
         android:layout_below="@id/texte"
-        android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:padding="0dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginTop="60dp">
 
     <Button
-        android:layout_width="170dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:text="Autentificare"
         android:id="@+id/loginBTN"
-        android:layout_margin="10dp"
         android:textColor="#FFE082"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="10dp"
         android:backgroundTint="#FF8F00"/>
 
     <Button
-        android:layout_width="170dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:id="@+id/registerBTN"
         android:text="Inregistrare"
-        android:layout_margin="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="0dp"
         android:textColor="#FFE082"
         android:backgroundTint="#FF8F00"/>
     </LinearLayout>

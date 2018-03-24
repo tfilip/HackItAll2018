@@ -50,7 +50,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="105dp"
-        android:text="Inregistrare" />
+        android:text="Inregistrare"
+        android:textColor="#FFE082"
+        android:backgroundTint="#FF8F00" />
 
     <Switch
         android:layout_width="wrap_content"
