@@ -56,6 +56,7 @@ public class RestaurantMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_main);
+        mAuth = FirebaseAuth.getInstance();
 
         Toast.makeText(this,"Restaurant",Toast.LENGTH_SHORT).show();
 
