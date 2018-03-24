@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ro.shaii.hackitall2018.ClientMainActivity"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/textAdaugaAnunt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Adauga un anunt" />
+
+    <ImageView
+        android:id="@+id/imgAnunt"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="false"
+        android:layout_below="@id/textAdaugaAnunt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:layout_above="@id/textFotoET"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <TextView
+        android:id="@+id/textFotoAnunt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgAnunt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Introduceti fotografie" />
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textFotoAnunt"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Preparat"
+            android:paddingBottom="5dp"
+            android:backgroundTint="#FF8F00"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Produs la data:"
+            android:paddingBottom="5dp"
+            android:backgroundTint="#FF8F00"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Expira la data:"
+            android:paddingBottom="5dp"
+            android:backgroundTint="#FF8F00"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="6"
+            android:hint="Descriere"
+            android:paddingBottom="5dp"
+            android:backgroundTint="#FF8F00"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+
+
+
+
+</RelativeLayout>
