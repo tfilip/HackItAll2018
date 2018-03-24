@@ -48,28 +48,31 @@
         android:orientation="horizontal"
         android:id="@+id/butoane"
         android:layout_below="@id/texte"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="60dp">
 
     <Button
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
         android:text="Autentificare"
         android:id="@+id/loginBTN"
         android:textColor="#FFE082"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="0dp"
+        android:layout_weight="10"
         android:backgroundTint="#FF8F00"/>
 
     <Button
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
         android:id="@+id/registerBTN"
         android:text="Inregistrare"
-        android:layout_marginEnd="10dp"
+        android:textSize="15sp"
+        android:layout_marginEnd="0dp"
         android:layout_marginStart="5dp"
+        android:layout_weight="10"
         android:textColor="#FFE082"
         android:backgroundTint="#FF8F00"/>
     </LinearLayout>
