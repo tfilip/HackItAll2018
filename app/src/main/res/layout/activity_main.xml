@@ -7,6 +7,7 @@
     tools:context="ro.shaii.hackitall2018.MainActivity"
     >
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
