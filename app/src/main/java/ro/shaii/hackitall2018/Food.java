@@ -1,7 +1,5 @@
 package ro.shaii.hackitall2018;
 
-import java.util.Date;
-
 /**
  * Created by filip on 24-Mar-18.
  */
@@ -9,9 +7,9 @@ import java.util.Date;
 public class Food {
 
     public String foodName;
-    public restaurant rest;
-    public Date productionDate;
-    public Date expirtyDate;
+    public String rest;
+    public String productionDate;
+    public String expiryDate;
     public String descriere;
     public String photoURL;
 
@@ -28,28 +26,22 @@ public class Food {
         this.photoURL = photoURL;
     }
 
-    public Food(String foodName, restaurant rest, Date productionDate, Date expirtyDate, String descriere, String photoURL) {
+    public Food(String foodName, String rest, String productionDate, String expiryDate, String descriere, String photoURL) {
         this.foodName = foodName;
         this.rest = rest;
         this.productionDate = productionDate;
-        this.expirtyDate = expirtyDate;
+        this.expiryDate = expiryDate;
         this.descriere = descriere;
         this.photoURL = photoURL;
     }
 
-    public Food(String foodName, restaurant restaurant, Date productionDate, Date expirtyDate, String descriere) {
-        this.foodName = foodName;
-        this.rest = restaurant;
-        this.productionDate = productionDate;
-        this.expirtyDate = expirtyDate;
-        this.descriere = descriere;
-    }
 
-    public restaurant getRest() {
+
+    public String getRest() {
         return rest;
     }
 
-    public void setRest(restaurant rest) {
+    public void setRest(String rest) {
         this.rest = rest;
     }
 
@@ -69,27 +61,27 @@ public class Food {
         this.foodName = foodName;
     }
 
-    public restaurant getRestaurant() {
+    public String getRestaurant() {
         return this.rest;
     }
 
-    public void setRestaurant(restaurant Restaurant) {
+    public void setRestaurant(String Restaurant) {
         this.rest = Restaurant;
     }
 
-    public Date getProductionDate() {
+    public String getProductionDate() {
         return productionDate;
     }
 
-    public void setProductionDate(Date productionDate) {
+    public void setProductionDate(String productionDate) {
         this.productionDate = productionDate;
     }
 
-    public Date getExpirtyDate() {
-        return expirtyDate;
+    public String getExpiryDate() {
+        return expiryDate;
     }
 
-    public void setExpirtyDate(Date expirtyDate) {
-        this.expirtyDate = expirtyDate;
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
     }
 }
