@@ -8,8 +8,8 @@
     tools:context="ro.shaii.hackitall2018.restaurant"
     android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/imageButton"
+    <ImageView
+        android:id="@+id/img"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentTop="true"
@@ -33,11 +33,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_below="@+id/imageButton"
+        android:layout_below="@+id/img"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Introduceti fotografie" />
     <EditText
+
         android:id="@+id/adresaET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,7 +53,7 @@
         android:id="@+id/telefonET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/loginBTN"
+        android:layout_above="@+id/saveBTN"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="110dp"
         android:backgroundTint="#FFD54F"
@@ -61,7 +62,7 @@
         android:paddingTop="20dp" />
 
     <Button
-        android:id="@+id/loginBTN"
+        android:id="@+id/saveBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -70,7 +71,6 @@
         android:backgroundTint="#FF8F00"
         android:textColor="#FFE082"
         android:text="salvare" />
-
 
 
 
