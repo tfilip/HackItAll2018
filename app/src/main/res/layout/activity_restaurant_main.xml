@@ -10,12 +10,11 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="27dp"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <EditText
@@ -29,14 +28,21 @@
         android:inputType="textNoSuggestions"
         android:paddingTop="20dp" />
 
+    <EditText
+        android:id="@+id/textFotoET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
+        android:layout_above="@+id/numeresET"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:text="Introduceti fotografie" />
     <EditText
         android:id="@+id/adresaET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/telefonET"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp"
         android:backgroundTint="#FFD54F"
         android:hint="Adresa Restaurant"
         android:inputType="textNoSuggestions"
@@ -48,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/loginBTN"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="118dp"
+        android:layout_marginBottom="110dp"
         android:backgroundTint="#FFD54F"
         android:hint="Telefon"
         android:inputType="textNoSuggestions"
