@@ -7,90 +7,90 @@
     tools:context="ro.shaii.hackitall2018.ClientMainActivity">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="0dp"
-        app:cardMaxElevation="1dp"
         app:cardElevation="0.7dp"
-        app:contentPadding="10dp"
-        app:contentPaddingBottom="0dp"
+        app:cardMaxElevation="1dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
-        android:id="@+id/cardView">
+        app:contentPadding="10dp"
+        app:contentPaddingBottom="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:src="@drawable/platem"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:scaleType="centerCrop"
                 android:id="@+id/mancareDefault"
-                android:contentDescription="CardImageViewDesc" />
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:contentDescription="CardImageViewDesc"
+                android:scaleType="centerCrop"
+                android:src="@drawable/platem" />
 
             <TextView
                 android:id="@+id/numeMancare"
-                android:paddingTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/mancareDefault"
                 android:layout_marginStart="5dp"
-                android:paddingStart="40dp"
-                android:paddingEnd="10dp"
+                android:layout_toEndOf="@id/mancareDefault"
                 android:fontFamily="sans-serif"
                 android:gravity="center_vertical"
-                android:text="Ceafa de porc"
-                android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:paddingEnd="10dp"
+                android:paddingStart="40dp"
+                android:paddingTop="10dp"
+                android:text="• Ceafa de porc"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/numeRestaurant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/mancareDefault"
                 android:layout_below="@id/numeMancare"
-                android:paddingStart="40dp"
-                android:paddingEnd="10dp"
-                android:textSize="25sp"
-                android:textStyle="italic"
                 android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/mancareDefault"
                 android:fontFamily="sans-serif"
                 android:gravity="center_vertical"
-                android:text="Pub18"/>
+                android:paddingEnd="10dp"
+                android:paddingStart="40dp"
+                android:text="• Pub18"
+                android:textSize="15sp"
+                android:textStyle="italic|bold" />
 
             <TextView
                 android:id="@+id/dataProducere"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/mancareDefault"
                 android:layout_below="@id/numeRestaurant"
-                android:paddingStart="40dp"
-                android:paddingEnd="10dp"
-                android:paddingTop="5dp"
-                android:textSize="20sp"
-                android:textStyle="italic"
                 android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/mancareDefault"
                 android:fontFamily="sans-serif"
                 android:gravity="center_vertical"
-                android:text="produs: 19 Martie"/>
+                android:paddingEnd="10dp"
+                android:paddingStart="40dp"
+                android:paddingTop="5dp"
+                android:text="• Produs: 19 martie"
+                android:textSize="12sp"
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/dataExpirare"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/mancareDefault"
                 android:layout_below="@id/dataProducere"
-                android:paddingStart="40dp"
-                android:paddingEnd="10dp"
-                android:textSize="20sp"
-                android:textStyle="italic"
                 android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/mancareDefault"
                 android:fontFamily="sans-serif"
                 android:gravity="center_vertical"
-                android:text="expira: 20 Martie"/>
+                android:paddingEnd="10dp"
+                android:paddingStart="40dp"
+                android:text="• Expira: 20 martie"
+                android:textSize="12sp"
+                android:textStyle="italic" />
 
 
         </RelativeLayout>
