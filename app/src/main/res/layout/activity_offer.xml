@@ -105,16 +105,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/cdescriere"
-        android:background="#0F8F00" >
+        android:background="#0F8F00"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
     <Button
-        android:layout_below="@id/cdescriere"
         android:id="@+id/clientbuton"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="30sp"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
         android:text="Accept"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
+        android:layout_weight="2"
         android:backgroundTint="#0F8F00"
         android:textColor="#FFE082"
         />
