@@ -24,6 +24,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:src="@drawable/platem"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
@@ -32,24 +33,64 @@
 
             <TextView
                 android:id="@+id/numeMancare"
+                android:paddingTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/mancareDefault"
                 android:layout_marginStart="5dp"
+                android:paddingStart="40dp"
+                android:paddingEnd="10dp"
                 android:fontFamily="sans-serif"
                 android:gravity="center_vertical"
-                android:text="Pizza"
-                android:textSize="20sp"
+                android:text="Ceafa de porc"
+                android:textSize="30sp"
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/numeRestaurant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/mancareDefault"
+                android:layout_below="@id/numeMancare"
+                android:paddingStart="40dp"
+                android:paddingEnd="10dp"
+                android:textSize="25sp"
+                android:textStyle="italic"
                 android:layout_marginStart="5dp"
                 android:fontFamily="sans-serif"
                 android:gravity="center_vertical"
                 android:text="Pub18"/>
+
+            <TextView
+                android:id="@+id/dataProducere"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/mancareDefault"
+                android:layout_below="@id/numeRestaurant"
+                android:paddingStart="40dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:layout_marginStart="5dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:text="produs: 19 Martie"/>
+
+            <TextView
+                android:id="@+id/dataExpirare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/mancareDefault"
+                android:layout_below="@id/dataProducere"
+                android:paddingStart="40dp"
+                android:paddingEnd="10dp"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:layout_marginStart="5dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:text="expira: 20 Martie"/>
 
 
         </RelativeLayout>
