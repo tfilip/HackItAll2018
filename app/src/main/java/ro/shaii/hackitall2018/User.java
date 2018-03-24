@@ -6,7 +6,28 @@ package ro.shaii.hackitall2018;
 
 public class User {
 
-    private String address;
-    private enum type{Client, Consumator};
+    public String address;
+    public String type;
 
+    public User(String address,String type) {
+        this.address = address;
+        this.type = type;
+    }
+
+    public User(){
+
+    };
+
+    public void setAsClient(){
+        this.type = "Client";
+    }
+
+    public void  setAsRestaurant(){
+        this.type = "Restaurant";
+    }
+
+
+    public String getType() {
+        return type;
+    }
 }
