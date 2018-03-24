@@ -1,34 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ro.shaii.hackitall2018.restaurant"
-    android:orientation="vertical">
+    tools:context="ro.shaii.hackitall2018.RestaurantMain2Activity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/my_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:scrollbars="vertical" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="25dp"
-        android:layout_marginEnd="25dp"
-        android:clickable="true"
-        app:elevation="0dp"
-        app:srcCompat="@drawable/buton" />
-
-    </android.support.v7.widget.RecyclerView>
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
