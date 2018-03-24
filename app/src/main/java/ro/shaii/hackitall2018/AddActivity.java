@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.CountDownTimer;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,6 +35,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class AddActivity extends AppCompatActivity {
 
@@ -168,6 +172,15 @@ public class AddActivity extends AppCompatActivity {
 
         Food newFood = new Food(numeMancare,FirebaseAuth.getInstance().getCurrentUser().getDisplayName(),dataProductie,dataExpirare,descriere,photoURL,FirebaseAuth.getInstance().getCurrentUser().getUid());
 
+        new Timer().schedule(
+                new TimerTask() {
+                    @Override
+                    public void run() {
+
+                    }
+                } , 2000
+        );
+        
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("foods");
 
         databaseReference.child(mAuth.getCurrentUser().getUid()).child(newFood.getFoodName()).setValue(newFood);

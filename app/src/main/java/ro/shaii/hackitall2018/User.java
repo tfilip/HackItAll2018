@@ -30,4 +30,17 @@ public class User {
     public String getType() {
         return type;
     }
+
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

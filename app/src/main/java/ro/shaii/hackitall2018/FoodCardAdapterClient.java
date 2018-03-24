@@ -53,8 +53,13 @@ public class FoodCardAdapterClient extends RecyclerView.Adapter<FoodCardAdapterC
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,Offer.class);
-                intent.putExtra(foodList.get(position).getRestUID(),200);
 
+                Log.d("ASDASD",foodList.get(position).getFoodName());
+
+
+                intent.putExtra("200",foodList.get(position).getRestUID());
+                intent.putExtra("201",foodList.get(position).getFoodName());
+                context.startActivity(intent);
 
             }
         });

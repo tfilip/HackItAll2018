@@ -6,11 +6,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -74,7 +72,7 @@ public class ClientMainActivity extends AppCompatActivity {
 
 
 
-        DatabaseReference foodsRef  = FirebaseDatabase.getInstance().getReference().child("foods");
+        final DatabaseReference foodsRef  = FirebaseDatabase.getInstance().getReference().child("foods");
 
         foodsRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
@@ -95,6 +93,7 @@ public class ClientMainActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             foodList.clear();
+
                             for(DataSnapshot foodSnapshot: dataSnapshot.getChildren()){
                                 String foodName = foodSnapshot.child("foodName").getValue().toString();
                                 String descriere = foodSnapshot.child("descriere").getValue().toString();
@@ -123,7 +122,6 @@ public class ClientMainActivity extends AppCompatActivity {
 
 
                 }
-
 
             }
 

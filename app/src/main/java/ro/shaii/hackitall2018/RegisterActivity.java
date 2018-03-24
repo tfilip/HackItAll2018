@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.regex.Pattern;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private static String TAG = "REGISTER_ACTIVITY";
@@ -94,6 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
         /*
             Verificari pentru campul de email si de parola
          */
+        Pattern specailCharPatten = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
 
         if(TextUtils.isEmpty(email)){
             emailET.setError("Campul E-Mail nu poate fi liber");
@@ -107,11 +110,24 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        if (password.length() < 6 ){
-            passwordET.setError("Parola trebuie sa contina mai mult de 6 caractere");
+        if (password.length() < 8 ){
+            passwordET.setError("Parola trebuie sa contina mai mult de 8 caractere");
             passwordET.requestFocus();
             return;
         }
+
+        if(!password.matches(".*\\d+.*")) {
+            passwordET.setError("Parola trebuie sa contina minim o cifra");
+            passwordET.requestFocus();
+            return;
+        }
+        if (!specailCharPatten.matcher(password).find()) {
+            passwordET.setError("Parola trebuie sa contina minim un caracter special");
+            passwordET.requestFocus();
+            return;
+        }
+
+
 
         /*
             Inregistrarea utilizatorului
