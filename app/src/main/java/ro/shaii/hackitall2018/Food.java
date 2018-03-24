@@ -9,9 +9,9 @@ import java.util.Date;
 public class Food {
 
     public String foodName;
-    public restaurant rest;
-    public Date productionDate;
-    public Date expirtyDate;
+    public String rest;
+    public String productionDate;
+    public String expirtyDate;
     public String descriere;
     public String photoURL;
 
@@ -28,7 +28,7 @@ public class Food {
         this.photoURL = photoURL;
     }
 
-    public Food(String foodName, restaurant rest, Date productionDate, Date expirtyDate, String descriere, String photoURL) {
+    public Food(String foodName, String rest, String productionDate, String expirtyDate, String descriere, String photoURL) {
         this.foodName = foodName;
         this.rest = rest;
         this.productionDate = productionDate;
@@ -37,19 +37,13 @@ public class Food {
         this.photoURL = photoURL;
     }
 
-    public Food(String foodName, restaurant restaurant, Date productionDate, Date expirtyDate, String descriere) {
-        this.foodName = foodName;
-        this.rest = restaurant;
-        this.productionDate = productionDate;
-        this.expirtyDate = expirtyDate;
-        this.descriere = descriere;
-    }
 
-    public restaurant getRest() {
+
+    public String getRest() {
         return rest;
     }
 
-    public void setRest(restaurant rest) {
+    public void setRest(String rest) {
         this.rest = rest;
     }
 
@@ -69,27 +63,27 @@ public class Food {
         this.foodName = foodName;
     }
 
-    public restaurant getRestaurant() {
+    public String getRestaurant() {
         return this.rest;
     }
 
-    public void setRestaurant(restaurant Restaurant) {
+    public void setRestaurant(String Restaurant) {
         this.rest = Restaurant;
     }
 
-    public Date getProductionDate() {
+    public String getProductionDate() {
         return productionDate;
     }
 
-    public void setProductionDate(Date productionDate) {
+    public void setProductionDate(String productionDate) {
         this.productionDate = productionDate;
     }
 
-    public Date getExpirtyDate() {
+    public String getExpirtyDate() {
         return expirtyDate;
     }
 
-    public void setExpirtyDate(Date expirtyDate) {
+    public void setExpirtyDate(String expirtyDate) {
         this.expirtyDate = expirtyDate;
     }
 }

@@ -1,5 +1,6 @@
 package ro.shaii.hackitall2018;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -25,7 +27,11 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+import java.util.Random;
 import java.util.Timer;
 
 public class AddActivity extends AppCompatActivity {
@@ -40,8 +46,8 @@ public class AddActivity extends AppCompatActivity {
 
 
     private String numeMancare;
-    private Date dataExpirare;
-    private Date dataProductie;
+    private String dataExpirare;
+    private String dataProductie;
     private String descriere;
 
 
@@ -53,11 +59,14 @@ public class AddActivity extends AppCompatActivity {
 
     Food newFood;
 
+
+    private Calendar myCalendar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-
+        myCalendar = Calendar.getInstance();
         initViews();
 
         mDatabase = FirebaseDatabase.getInstance();
@@ -130,6 +139,8 @@ public class AddActivity extends AppCompatActivity {
 
         numeMancare = numeProdusET.getText().toString().trim();
         descriere = descriereET.getText().toString().trim();
+        dataProductie= dataProductieET.getText().toString().trim();
+        dataExpirare = dataExpriareET.getText().toString().trim();
 
         if(TextUtils.isEmpty(numeMancare)){
             Toast.makeText(this,"Toate campurile trebuie sa fie completate", Toast.LENGTH_SHORT).show();
@@ -144,11 +155,58 @@ public class AddActivity extends AppCompatActivity {
             return;
         }
 
+        if(TextUtils.isEmpty(dataProductie)){
+            Toast.makeText(this,"Toate campurile trebuie sa fie completate", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(TextUtils.isEmpty(dataExpirare)){
+            Toast.makeText(this,"Toate campurile trebuie sa fie completate", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 
+        Food newFood = new Food(numeMancare,FirebaseAuth.getInstance().getCurrentUser().getDisplayName(),dataProductie,dataExpirare,descriere,photoURL);
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("foods");
+
+        databaseReference.child(mAuth.getCurrentUser().getUid()).child(String.valueOf(System.currentTimeMillis())).setValue(newFood);
+
+        finish();
 
     }
 
+    DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+            String myFormat = "MM/dd/yy";
+            SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+            dataExpriareET.setText(sdf.format(myCalendar.getTime()));
+        }
+
+    };
+
+    DatePickerDialog.OnDateSetListener datePickerListener2 = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+            String myFormat = "MM/dd/yy";
+            SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+            dataProductieET.setText(sdf.format(myCalendar.getTime()));
+        }
+
+    };
 
     private void initViews(){
 
@@ -160,6 +218,29 @@ public class AddActivity extends AppCompatActivity {
         addButton = findViewById(R.id.submitBTN);
 
 
+        dataExpriareET.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(AddActivity.this,datePickerListener,myCalendar.get(Calendar.YEAR),
+                        myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+        dataProductieET.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(AddActivity.this,datePickerListener2,myCalendar.get(Calendar.YEAR),
+                        myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+
+
 
     }
+
+
+
 }

@@ -60,14 +60,8 @@ public class RestaurantMain2Activity extends AppCompatActivity {
         Food testFood;
         restaurant testRestaurant;
 
-        testRestaurant = new restaurant("adresa la intamplare","023145151","KFC");
 
-        Date date1 = new Date(2018,2,23);
-        Date date2 = new Date(2018,2,24);
-        testFood = new Food("Snitzel",testRestaurant,date1,date2,"descriere random","https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG");
 
-        foodList.add(testFood);
-        foodList.add(testFood);
 
         adapter = new FoodCardAdapter(foodList,getApplicationContext());
         recyclerView.setAdapter(adapter);

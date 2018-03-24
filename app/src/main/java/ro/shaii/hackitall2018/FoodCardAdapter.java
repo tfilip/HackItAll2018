@@ -41,9 +41,9 @@ public class FoodCardAdapter extends RecyclerView.Adapter<FoodCardAdapter.ViewHo
         if(food!=null){
             Picasso.get().load(food.getPhotoURL()).into(holder.IMG);
             holder.numeMancareTV.setText(food.getFoodName());
-            holder.numeRestaurantTV.setText(food.getRest().getNume());
-            holder.dataExpirareTV.setText(food.getExpirtyDate().toString());
-            holder.dataProductieTV.setText(food.getProductionDate().toString());
+            holder.numeRestaurantTV.setText(food.getRest());
+            holder.dataExpirareTV.setText(food.getExpirtyDate());
+            holder.dataProductieTV.setText(food.getProductionDate());
         }
     }
 
