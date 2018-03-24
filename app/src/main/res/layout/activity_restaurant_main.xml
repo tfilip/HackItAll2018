@@ -25,6 +25,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/textFotoET"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <EditText
@@ -36,14 +38,16 @@
         android:backgroundTint="#FFD54F"
         android:hint="Nume Restaurant"
         android:inputType="textNoSuggestions"
-        android:paddingTop="20dp" />
+        android:paddingTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
 
     <TextView
         android:id="@+id/textFotoET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_below="@+id/img"
+        android:layout_above="@id/numeresET"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Introduceti fotografie" />
@@ -57,7 +61,9 @@
         android:backgroundTint="#FFD54F"
         android:hint="Adresa Restaurant"
         android:inputType="textNoSuggestions"
-        android:paddingTop="20dp" />
+        android:paddingTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
 
     <EditText
         android:id="@+id/telefonET"
@@ -69,7 +75,9 @@
         android:backgroundTint="#FFD54F"
         android:hint="Telefon"
         android:inputType="textNoSuggestions"
-        android:paddingTop="20dp" />
+        android:paddingTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
 
     <Button
         android:id="@+id/saveBTN"
