@@ -7,21 +7,66 @@
     android:layout_height="match_parent"
     tools:context="ro.shaii.hackitall2018.RestaurantMainActivity">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/img"/>
 
     <EditText
         android:id="@+id/numeresET"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_above="@id/adresaET"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#FFD54F"
+        android:hint="Nume Restaurant"
+        android:inputType="textNoSuggestions"
+        android:paddingTop="20dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="181dp" />
 
     <EditText
-        android:id="@+id/adresaET" />
+        android:id="@+id/adresaET"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_above="@id/telefonET"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#FFD54F"
+        android:hint="Adresa Restaurant"
+        android:inputType="textNoSuggestions"
+        android:paddingTop="20dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="229dp" />
 
 
     <EditText
-        android:id="@+id/telefonET" />
+        android:id="@+id/telefonET"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_above="@id/adresaET"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#FFD54F"
+        android:hint="Telefon"
+        android:inputType="textNoSuggestions"
+        android:paddingTop="20dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="277dp" />
+
+    <Button
+        android:id="@+id/loginBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_weight="10"
+        android:backgroundTint="#FF8F00"
+        android:text="Salvare"
+        android:textColor="#FFE082"
+        android:textSize="15sp"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="480dp" />
+
+    <ImageButton
+        android:id="@+id/imagebuttonET"
+        android:layout_width="98dp"
+        android:layout_height="85dp"
+        app:srcCompat="@android:drawable/ic_menu_camera"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="29dp" />
 
 
 </android.support.constraint.ConstraintLayout>
