@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:textSize="17sp"
         android:layout_below="@id/ctelefon"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:text="Pizza pe jumatate mancata cu Peperoni si Cheddar"
         android:paddingLeft="10dp"/>
 
