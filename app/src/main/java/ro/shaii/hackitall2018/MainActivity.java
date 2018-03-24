@@ -117,8 +117,19 @@ public class MainActivity extends AppCompatActivity {
                                             finish();
                                             startActivity(new Intent(getApplicationContext(),ClientMainActivity.class));
                                         }else{
-                                            finish();
-                                            startActivity(new Intent(getApplicationContext(),RestaurantMainActivity.class));
+
+
+                                            DatabaseReference ref2  = mDatabase.getReference("restaurants");
+
+                                            if(ref2.child(mAuth.getCurrentUser().getUid()) == null){
+                                                finish();
+                                                startActivity(new Intent(getApplicationContext(),RestaurantMainActivity.class));
+                                            }
+                                            else{
+                                                finish();
+                                                startActivity(new Intent(getApplicationContext(),RestaurantMain2Activity.class));
+                                            }
+
                                         }
 
                                     }catch (Throwable e){
@@ -168,16 +179,26 @@ public class MainActivity extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     try {
 
-                        User user = new User(dataSnapshot.child("address").getValue().toString(),dataSnapshot.child("type").getValue().toString());
+                        User newUser = new User(dataSnapshot.child("address").getValue().toString(),dataSnapshot.child("type").getValue().toString());
 
-                        Log.v(TAG, user.getType());
+                        Log.v(TAG, newUser.getType());
 
-                        if(user.getType().equals("Client")){
+                        if(newUser.getType().equals("Restaurant")){
                             finish();
-                            startActivity(new Intent(getApplicationContext(),ClientMainActivity.class));
+                            DatabaseReference ref2  = mDatabase.getReference("restaurants");
+
+                            if(dataSnapshot.child(user.getUid()) == null){
+                                finish();
+                                startActivity(new Intent(getApplicationContext(),RestaurantMainActivity.class));
+                            }
+                            else{
+                                finish();
+                                startActivity(new Intent(getApplicationContext(),RestaurantMain2Activity.class));
+                            }
+
                         }else{
                             finish();
-                            startActivity(new Intent(getApplicationContext(),RestaurantMainActivity.class));
+                            startActivity(new Intent(getApplicationContext(),ClientMainActivity.class));
                         }
 
                     }catch (Throwable e){

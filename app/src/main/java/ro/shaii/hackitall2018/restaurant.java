@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 public class restaurant extends User{
 
-    private int rating;
-    private ArrayList<Review> reviews;
-    private String telefon;
+    public int rating;
+    public ArrayList<Review> reviews;
+    public String telefon;
 
     public restaurant(String address, String telefon) {
         super.type = "Restaurant";

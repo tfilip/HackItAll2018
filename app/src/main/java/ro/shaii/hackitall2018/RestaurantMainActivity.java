@@ -57,7 +57,7 @@ public class RestaurantMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_main);
         mAuth = FirebaseAuth.getInstance();
-
+        mDatabase = FirebaseDatabase.getInstance();
         Toast.makeText(this,"Restaurant",Toast.LENGTH_SHORT).show();
 
         initViews();
@@ -121,6 +121,11 @@ public class RestaurantMainActivity extends AppCompatActivity {
         if (user != null) {
             ref.child(user.getUid()).setValue(newRestaurant);
         }
+
+        Toast.makeText(this,"Salvat",Toast.LENGTH_LONG).show();
+
+        finish();
+        startActivity(new Intent(getApplicationContext(),RestaurantMain2Activity.class));
 
     }
 
