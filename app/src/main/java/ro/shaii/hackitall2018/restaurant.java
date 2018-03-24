@@ -7,9 +7,7 @@ package ro.shaii.hackitall2018;
 public class restaurant extends User{
 
     private String nume_restaurant;
-
-    private enum type{Client, Producator};
+    private String adresa;
     private int rating;
 
-    private String review;
 }
