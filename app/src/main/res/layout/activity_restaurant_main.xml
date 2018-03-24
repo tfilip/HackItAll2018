@@ -7,6 +7,11 @@
     android:layout_height="match_parent"
     tools:context="ro.shaii.hackitall2018.RestaurantMainActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img"/>
+
     <EditText
         android:id="@+id/numeresET"
         />
