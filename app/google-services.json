@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "621160681191",
+    "firebase_url": "https://hackitall2018.firebaseio.com",
+    "project_id": "hackitall2018",
+    "storage_bucket": "hackitall2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621160681191:android:ca8edf0f533502eb",
+        "android_client_info": {
+          "package_name": "ro.shaii.hackitall2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621160681191-d2lh6vntq33p2nhfvoanajuq10vrta4k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ro.shaii.hackitall2018",
+            "certificate_hash": "a251b72d5580af08c26e8944f6cac3bd642587e2"
+          }
+        },
+        {
+          "client_id": "621160681191-7t5qplb2vv2ec61ujmb2d5fd6icb1ahp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe-dn-8AArWc-PYFAEos2p-jsJG5sGxjI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621160681191-7t5qplb2vv2ec61ujmb2d5fd6icb1ahp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
