@@ -6,8 +6,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -53,12 +55,47 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                for(final DataSnapshot snapshot : dataSnapshot.getChildren()){
 
                     if(snapshot.getKey().equals(restauranteList.get(position))){
                         Log.d("TESTKLO",snapshot.child("nume").getValue().toString());
                         String numeRestaurant = snapshot.child("nume").getValue().toString();
                         holder.numeRestaurantTV.setText(numeRestaurant);
+
+
+                        holder.voteBTN.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                DatabaseReference ref2 = FirebaseDatabase.getInstance().getReference("restaurants");
+
+                                ref2.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        for(DataSnapshot snapshot1 : dataSnapshot.getChildren()){
+
+
+
+                                            if(snapshot.getKey().equals(snapshot1.getKey())){
+                                                int x;
+                                                x = Integer.parseInt(snapshot1.child("rating").getValue().toString());
+                                                Log.d("ASDAS", snapshot1.child("rating").getValue().toString());
+                                                Log.d("MUIE",snapshot1.getKey());
+                                                DatabaseReference ref3 = FirebaseDatabase.getInstance().getReference("restaurants").child(snapshot1.getKey()).child("rating");
+                                                ref3.setValue(++x);
+                                            }
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+
+                                    }
+                                });
+
+
+                            }
+                        });
                     }
                 }
             }
@@ -82,12 +119,17 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
 
 
         public TextView numeRestaurantTV;
+        public Button voteBTN;
 
         public ViewHolder(View itemView) {
             super(itemView);
             numeRestaurantTV = itemView.findViewById(R.id.Restaurant);
+            voteBTN = itemView.findViewById(R.id.mancareDefault);
 
         }
+
+
+
     }
 
 }
