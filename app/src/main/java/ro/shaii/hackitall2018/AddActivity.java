@@ -180,7 +180,7 @@ public class AddActivity extends AppCompatActivity {
                     }
                 } , 2000
         );
-        
+
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("foods");
 
         databaseReference.child(mAuth.getCurrentUser().getUid()).child(newFood.getFoodName()).setValue(newFood);

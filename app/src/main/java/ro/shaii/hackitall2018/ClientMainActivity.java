@@ -86,13 +86,15 @@ public class ClientMainActivity extends AppCompatActivity {
                 for(DataSnapshot dsp: dataSnapshot.getChildren()){
 
                     foodList.clear();
+
                     databaseFood = FirebaseDatabase.getInstance().getReference().child("foods").child(dsp.getKey());
 
                     databaseFood.addValueEventListener(new ValueEventListener() {
 
+
+
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            foodList.clear();
 
                             for(DataSnapshot foodSnapshot: dataSnapshot.getChildren()){
                                 String foodName = foodSnapshot.child("foodName").getValue().toString();
