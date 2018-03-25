@@ -67,13 +67,12 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
                             @Override
                             public void onClick(View v) {
 
-                                DatabaseReference ref2 = FirebaseDatabase.getInstance().getReference("restaurants");
+                                final DatabaseReference ref2 = FirebaseDatabase.getInstance().getReference("restaurants");
 
                                 ref2.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         for(DataSnapshot snapshot1 : dataSnapshot.getChildren()){
-
 
 
                                             if(snapshot.getKey().equals(snapshot1.getKey())){
@@ -83,6 +82,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
                                                 Log.d("MUIE",snapshot1.getKey());
                                                 DatabaseReference ref3 = FirebaseDatabase.getInstance().getReference("restaurants").child(snapshot1.getKey()).child("rating");
                                                 ref3.setValue(++x);
+
+                                                holder.voteBTN.setClickable(false);
+                                                holder.voteBTN.setAlpha(0.5f);
                                             }
                                         }
                                     }
