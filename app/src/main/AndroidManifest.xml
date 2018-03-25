@@ -9,7 +9,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/materialshitbag"
-        android:label="@string/app_name"
+        android:label="Punguta"
         android:roundIcon="@mipmap/materialshitbag_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
