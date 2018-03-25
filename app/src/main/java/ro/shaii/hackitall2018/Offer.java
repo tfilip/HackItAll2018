@@ -5,6 +5,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +15,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -159,6 +162,37 @@ public class Offer extends AppCompatActivity {
                     Intent intent = new Intent(Intent.ACTION_CALL);
                     intent.setData(Uri.parse(uri));
                     if (ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
+
+                        ActivityCompat.requestPermissions(Offer.this, new String[]{Manifest.permission.CALL_PHONE}, 300);
+
+
+                        return;
+                    }
+                    getApplicationContext().startActivity(intent);
+                    adaugaRestaurant();
+                }
+            }
+        });
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (requestCode) {
+            case 300: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+
+                    String uri = "tel:" + restaurant.getTelefon().trim();
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse(uri));
+                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                         // TODO: Consider calling
                         //    ActivityCompat#requestPermissions
                         // here to request the missing permissions, and then overriding
@@ -166,13 +200,56 @@ public class Offer extends AppCompatActivity {
                         //                                          int[] grantResults)
                         // to handle the case where the user grants the permission. See the documentation
                         // for ActivityCompat#requestPermissions for more details.
-
-                        ActivityCompat.requestPermissions(Offer.this, new String[]{Manifest.permission.CALL_PHONE},300);
-
                         return;
                     }
-                    getApplicationContext().startActivity(intent);
+                    startActivity(intent);
+                    adaugaRestaurant();
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(this,"Te rugam sa accepti permisunile pentru a putea suna restaurantul",Toast.LENGTH_SHORT).show();
+
                 }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request.
+        }
+
+
+
+    }
+
+    private void adaugaRestaurant(){
+
+        final DatabaseReference usersReference = FirebaseDatabase.getInstance().getReference("users");
+
+        Log.d("USER_NAME",FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+        usersReference.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+
+                    if(snapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                        FirebaseDatabase.getInstance().getReference("users").
+                                child(snapshot.getKey()).child("visited").child(String.valueOf(System.currentTimeMillis())
+                        ).setValue(food.getRestUID());
+
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
 

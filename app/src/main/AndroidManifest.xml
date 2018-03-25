@@ -3,6 +3,16 @@
     package="ro.shaii.hackitall2018">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/materialshitbag"
@@ -23,6 +33,9 @@
         <activity android:name=".RestaurantMain2Activity" />
         <activity android:name=".Offer" />
         <activity android:name=".AddActivity" />
+
+
+        <activity android:name=".History"></activity>
     </application>
 
 </manifest>

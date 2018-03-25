@@ -48,19 +48,7 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <RatingBar
-                android:id="@+id/rating_bar"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/Restaurant"
-                android:layout_toEndOf="@id/mancareDefault"
-                android:paddingEnd="10dp"
-                android:paddingStart="40dp"
-                android:numStars="5"
-                android:rating="5"
-                android:stepSize="0.5"
-                />
+
 
 
 

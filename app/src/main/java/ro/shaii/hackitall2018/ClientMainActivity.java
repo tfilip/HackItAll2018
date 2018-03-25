@@ -1,6 +1,7 @@
 package ro.shaii.hackitall2018;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,8 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +30,8 @@ public class ClientMainActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private List<Food> foodList;
     private DatabaseReference databaseFood;
+    private FloatingActionButton FAB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +40,28 @@ public class ClientMainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        firebaseUser.sendEmailVerification();
+
+
+
         recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
         foodList = new ArrayList<>();
+
+        FAB = findViewById(R.id.floatingActionButton);
+        FAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), History.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
@@ -132,11 +153,6 @@ public class ClientMainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
 
     }
 }
