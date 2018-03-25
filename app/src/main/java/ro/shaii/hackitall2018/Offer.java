@@ -61,8 +61,6 @@ public class Offer extends AppCompatActivity {
         foodUID = getIntent().getStringExtra("201");
         restaurantUID = getIntent().getStringExtra("200");
 
-        Log.d("TEST LOL", foodUID);
-        Log.d("TEST", restaurantUID);
 
 
         final DatabaseReference foodRef = FirebaseDatabase.getInstance().getReference().child("foods").child(restaurantUID);
@@ -72,7 +70,6 @@ public class Offer extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot foodSnapshot : dataSnapshot.getChildren()) {
 
-                    Log.d("ITERATE", foodSnapshot.child("foodName").getValue().toString());
 
                     if (foodSnapshot.child("foodName").getValue().toString().equals(foodUID)) {
                         String foodName = foodSnapshot.child("foodName").getValue().toString();
@@ -82,7 +79,6 @@ public class Offer extends AppCompatActivity {
                         String expiryDate = foodSnapshot.child("expiryDate").getValue().toString();
                         String photoUrl = foodSnapshot.child("photoURL").getValue().toString();
                         String foodUID = foodSnapshot.child("restUID").getValue().toString();
-                        Log.d("TYY", photoUrl);
 
 
                         food = new Food(foodName, numeRestaurant, productionDate, expiryDate, descriere, photoUrl, foodUID);
@@ -227,7 +223,6 @@ public class Offer extends AppCompatActivity {
 
         final DatabaseReference usersReference = FirebaseDatabase.getInstance().getReference("users");
 
-        Log.d("USER_NAME",FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         usersReference.addListenerForSingleValueEvent(new ValueEventListener() {
 

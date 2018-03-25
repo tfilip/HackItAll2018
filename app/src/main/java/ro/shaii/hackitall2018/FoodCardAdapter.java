@@ -55,7 +55,6 @@ public class FoodCardAdapter extends RecyclerView.Adapter<FoodCardAdapter.ViewHo
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("foods").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                         .child(foodList.get(position).getFoodName());
 
-                Log.d("TEST",databaseReference.toString());
 
                 databaseReference.removeValue();
 
