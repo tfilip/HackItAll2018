@@ -25,13 +25,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <Button
                 android:id="@+id/mancareDefault"
                 android:layout_width="150dp"
                 android:layout_height="100dp"
                 android:contentDescription="CardImageViewDesc"
+                android:text="+1"
+                android:textColor="#FFE082"
+                android:textSize="45sp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/restaurantdefault" />
+                android:backgroundTint="#FF8F00"
+                />
 
             <TextView
                 android:id="@+id/Restaurant"
@@ -43,7 +47,7 @@
                 android:gravity="center_vertical"
                 android:paddingEnd="10dp"
                 android:paddingStart="40dp"
-                android:paddingTop="20dp"
+                android:paddingTop="30dp"
                 android:text="Pub 18"
                 android:textSize="30sp"
                 android:textStyle="bold" />
